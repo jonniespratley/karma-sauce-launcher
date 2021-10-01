@@ -83,6 +83,7 @@ export function SaucelabsLauncher(args,
       if (oldLogs) {
         // Now push the new and old job assets to Sauce Labs
         // @ts-ignore
+        /*
         await api.uploadJobAssets(
           sessionId,
           {
@@ -100,6 +101,7 @@ export function SaucelabsLauncher(args,
             ],
           },
         );
+        */
       }
     } catch (e) {
       log.error(`There was an error uploading the data to SauceLabs: ${e.message}`);

@@ -1,3 +1,18 @@
+describe('navigator.mediaDevices', function () {
+  it('should be defined', function () {
+    expect(navigator.mediaDevices).toBeDefined();
+  });
+
+  it('enumerateDevices - should return --fake-ui-devices from chrome args', function () {
+    navigator.mediaDevices.enumerateDevices().then(function (devices) {
+      devices.forEach(function (device) {
+        console.log('device', device);
+        expect(device.kind).toBeDefined();
+      });
+    });
+  });
+});
+
 describe('add', function () {
   it('should add two numbers and return the result', function () {
     expect(window.add(1, 2)).toBe(3)
